@@ -1,6 +1,5 @@
-cont=0
+conta=cont=0
 carrinho= ''
-conta = 0
 
 
 def linha():
@@ -20,24 +19,40 @@ for i in itens:
     cont+=1
 print()
 linha()
-compra = input('o que vai levar? ')
-
-if compra in itens:
-    print("OK! Item adcionado com sucesso! ")
-    while True:
-        carrinho +=compra
-        conta += itens.index(compra)
-        resposta = input('Vai querer levar algo a mais? [S/N]')
-        if resposta[0]=='sS':
-            compra = input('o que vai levar? ')
+esc = input('Deseja comprar algo? [S/N]')
+"""if esc in 'sS':
+    compra = input(f'o que vai levar? ')
+    if compra in itens:
+        carrinho += compra
+    else:
+        print('ops... parece que o item não foi encontrado.')"""
+while True:
+    if esc[0] in 'sS':
+        compra = input(f'o que vai levar? ')
+        if compra in itens:
+            carrinho+=compra
+            print('item adcionado com sucesso!')
+        else:
+            print('ops... parece que o item não foi encontrado.')
+    elif esc[0] in 'Nn':
+        print(f'Volte sempre!')
+        break
+    else:
+        print('ops.. não entendi')
+        esc = input('Deseja comprar algo? [S/N]')
+        if esc[0] in 'sS':
+            compra = input(f'o que vai levar? ')
             if compra in itens:
-                print("OK! Item adcionado com sucesso! ")
-                carrinho+=compra
-        elif resposta[0] == 'nN':
-            print('OK! Obrigada pela preferência.')
-            break
-else:
-    print('Ops... Parece que o produto desejado não foi encontrado')
+                carrinho += compra
+                print('item adcionado com sucesso!')
+            else:
+                print('ops... parece que o item não foi encontrado.')
+    esc = input('continuar a comprar? [S/N]')
+
+for i in carrinho:
+    print(i,end='')
+
+    cont+=1
 
             
  
