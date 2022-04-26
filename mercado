@@ -1,0 +1,41 @@
+c=0
+carrinho= ''
+conta = 0
+loop = True
+
+def linha():
+    print('\033[35m--\033[0m'*15)
+
+
+itens = ('arroz',5,'feijão',8,'farinha',2.5,'biscoito',3,'bolo',7,'bala de café',0.8)
+linha()
+print(f'{"LISTA":^24}')
+linha()
+print()
+for i in itens:
+    if c %2 ==0:
+        print(f'{itens[c]:.<24}',end=' ')
+    else:
+        print(f'{itens[c]:>5.2f}')
+    c+=1
+print()
+linha()
+compra = input('o que vai levar? ')
+
+if compra in itens:
+    print("OK! Item adcionado com sucesso! ")
+    while loop:
+        carrinho +=compra
+        conta += itens.index(compra)
+        resposta = input('Vai querer levar algo a mais? [S/N]')
+        if resposta[0]=='sS':
+            compra = input('o que vai levar? ')
+            if compra in itens:
+                print("OK! Item adcionado com sucesso! ")
+            carrinho+=compra
+        elif resposta[0] == 'nN':
+            loop == False
+else:
+    print('Ops... Parece que o produto desejado não foi encontrado')
+            
+ 
