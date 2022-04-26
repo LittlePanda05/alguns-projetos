@@ -1,9 +1,10 @@
 nome = input('digite seu nome: ')
 sexo = input('digite seu sexo [ M/F ] : ').strip().upper()[0]
-while sexo not in 'MF'
+while sexo not in 'MF':
     sexo = input('Ops... sexo invalido. Digite seu sexo [ M/F ] : ').strip().upper()[0]
-idade = int(input ('digite sua idade [anos]: )
+idade = int(input('digite sua idade [anos]: ' ))
 if idade >= 18:
     print('seu cadastro foi realizado com sucesso!')
 else:
     print('seu cadastro não pode ser concluído. Apenas pessoas com 18 anos ou mais podem realizá-lo')
+
