@@ -1,7 +1,7 @@
-c=0
+cont=0
 carrinho= ''
 conta = 0
-loop = True
+
 
 def linha():
     print('\033[35m--\033[0m'*15)
@@ -13,18 +13,18 @@ print(f'{"LISTA":^24}')
 linha()
 print()
 for i in itens:
-    if c %2 ==0:
-        print(f'{itens[c]:.<24}',end=' ')
+    if cont %2 ==0:
+        print(f'{itens[cont]:.<24}',end=' ')
     else:
-        print(f'{itens[c]:>5.2f}')
-    c+=1
+        print(f'{itens[cont]:>5.2f}')
+    cont+=1
 print()
 linha()
 compra = input('o que vai levar? ')
 
 if compra in itens:
     print("OK! Item adcionado com sucesso! ")
-    while loop:
+    while True:
         carrinho +=compra
         conta += itens.index(compra)
         resposta = input('Vai querer levar algo a mais? [S/N]')
@@ -32,10 +32,12 @@ if compra in itens:
             compra = input('o que vai levar? ')
             if compra in itens:
                 print("OK! Item adcionado com sucesso! ")
-            carrinho+=compra
+                carrinho+=compra
         elif resposta[0] == 'nN':
-            loop == False
+            print('OK! Obrigada pela preferência.')
+            break
 else:
     print('Ops... Parece que o produto desejado não foi encontrado')
+
             
  
