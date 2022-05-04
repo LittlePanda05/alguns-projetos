@@ -1,11 +1,10 @@
-conta=cont=0
+conta=cont=c=0
 carrinho= []
 def linha():
 
     print('\033[35m--\033[0m'*15)
 
-itens = ('arroz',5,'feijão',8,'farinha',2.5,'biscoito',3,'bolo',7,'bala
- de café',0.8)
+itens = ('arroz',5,'feijão',8,'farinha',2.5,'biscoito',3,'bolo',7,'bala',0.8)
 
 linha()
 
@@ -79,8 +78,10 @@ while True:
 
 
 for i in carrinho:
-
-    print(i)
-
+    c+=1
+    print(i,end='')
+    if len(carrinho)>c:
+        print(', ',end='')
+print()
             
  
