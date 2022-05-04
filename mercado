@@ -1,58 +1,86 @@
 conta=cont=0
-carrinho= ''
-
-
+carrinho= []
 def linha():
+
     print('\033[35m--\033[0m'*15)
 
+itens = ('arroz',5,'feijão',8,'farinha',2.5,'biscoito',3,'bolo',7,'bala
+ de café',0.8)
 
-itens = ('arroz',5,'feijão',8,'farinha',2.5,'biscoito',3,'bolo',7,'bala de café',0.8)
 linha()
+
 print(f'{"LISTA":^24}')
+
 linha()
+
 print()
+
 for i in itens:
+
     if cont %2 ==0:
-        print(f'{itens[cont]:.<24}',end=' ')
+    
+        print(f'{itens[cont]:.<24}',end='')
+
     else:
+
         print(f'{itens[cont]:>5.2f}')
+
     cont+=1
+
 print()
+
 linha()
-esc = input('Deseja comprar algo? [S/N]')
-"""if esc in 'sS':
-    compra = input(f'o que vai levar? ')
-    if compra in itens:
-        carrinho += compra
-    else:
-        print('ops... parece que o item não foi encontrado.')"""
+
+esc = input('Deseja comprar algo? [S/N] ')
+
 while True:
+
     if esc[0] in 'sS':
+
         compra = input(f'o que vai levar? ')
+
         if compra in itens:
-            carrinho+=compra
+
+            carrinho.append(compra)
+
             print('item adcionado com sucesso!')
+
         else:
+
             print('ops... parece que o item não foi encontrado.')
+
     elif esc[0] in 'Nn':
+    
         print(f'Volte sempre!')
+
         break
+
     else:
+
         print('ops.. não entendi')
+
         esc = input('Deseja comprar algo? [S/N]')
+
         if esc[0] in 'sS':
+
             compra = input(f'o que vai levar? ')
+
             if compra in itens:
-                carrinho += compra
+
+                carrinho.append(compra)
+
                 print('item adcionado com sucesso!')
+
             else:
+
                 print('ops... parece que o item não foi encontrado.')
+
     esc = input('continuar a comprar? [S/N]')
 
-for i in carrinho:
-    print(i,end='')
 
-    cont+=1
+for i in carrinho:
+
+    print(i)
 
             
  
