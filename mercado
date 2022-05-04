@@ -1,10 +1,10 @@
-conta=cont=c=0
-carrinho= []
-def linha():
+conta=preço=ind=cont=c=0
+carrinho=itens=[]
 
+def linha():
     print('\033[35m--\033[0m'*15)
 
-itens = ('arroz',5,'feijão',8,'farinha',2.5,'biscoito',3,'bolo',7,'bala',0.8)
+itens = ['arroz',5,'feijão',8,'farinha',2.5,'biscoito',3,'bolo',7,'bala',0.8]
 
 linha()
 
@@ -39,9 +39,10 @@ while True:
         compra = input(f'o que vai levar? ')
 
         if compra in itens:
-
+            ind=itens.index(compra)
+            preço = itens[ind+1]
             carrinho.append(compra)
-
+            conta+=preço
             print('item adcionado com sucesso!')
 
         else:
@@ -49,9 +50,12 @@ while True:
             print('ops... parece que o item não foi encontrado.')
 
     elif esc[0] in 'Nn':
-    
-        print(f'Volte sempre!')
-
+        for i in carrinho:
+            c+=1
+            print(i,end='')
+            if len(carrinho)>c:
+                print(', ',end='')
+            
         break
 
     else:
@@ -65,9 +69,10 @@ while True:
             compra = input(f'o que vai levar? ')
 
             if compra in itens:
-
+                ind=itens.index(compra)
+                preço = itens[ind+1]                
                 carrinho.append(compra)
-
+                conta+=preço
                 print('item adcionado com sucesso!')
 
             else:
@@ -76,12 +81,10 @@ while True:
 
     esc = input('continuar a comprar? [S/N]')
 
+print(f'\nO valor a ser pago é: {conta}')
 
-for i in carrinho:
-    c+=1
-    print(i,end='')
-    if len(carrinho)>c:
-        print(', ',end='')
-print()
+            
+ 
+
             
  
