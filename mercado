@@ -36,7 +36,7 @@ while True:
 
     if esc[0] in 'sS':
 
-        compra = input(f'o que vai levar? ')
+        compra = input(f'o que vai levar? ').lower()
 
         if compra in itens:
             ind=itens.index(compra)
@@ -66,7 +66,7 @@ while True:
 
         if esc[0] in 'sS':
 
-            compra = input(f'o que vai levar? ')
+            compra = input(f'o que vai levar? ').lower()
 
             if compra in itens:
                 ind=itens.index(compra)
@@ -81,7 +81,10 @@ while True:
 
     esc = input('continuar a comprar? [S/N]')
 
-print(f'\nO valor a ser pago é: {conta}')
+print(f'\nO valor a ser pago é: R${conta:.2f}')
+
+            
+ 
 
             
  
