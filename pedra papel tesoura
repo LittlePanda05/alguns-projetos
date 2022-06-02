@@ -1,4 +1,0 @@
-""" pedra, papel, tesoura"""
-from random import randint
-vermelho = \033[035m
-print(f'olá{vermelho}!')
